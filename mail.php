@@ -22,7 +22,7 @@ if ($decode['success']) {
             $pagetitle = "NEW!!! Message du site \"$sitename\"";
             mail($recepient, $pagetitle, $message, "Content-type: text/plain; charset=\"utf-8\"\n From: $recepient");
             header("Location: https://santiagodevweb.com/");
-            exit()
+           
         }
     } else {
         http_response_code(405);
