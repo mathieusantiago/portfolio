@@ -8,7 +8,7 @@ $get = file_get_contents($request);
 $decode = json_decode($get, true);
 
 if ($decode['success']) {
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if ($_POST) {
         if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['text'])) {
 
             $recepient = "mathieusantiago21@gmail.com";
