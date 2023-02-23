@@ -1,5 +1,5 @@
 <?php
-$secret = "6LdmbLgdAAAAACXlaaWGyRVKdfPAJoanoxhy3Jx1";
+$secret = "6Le1f6okAAAAADzbyWc0ZahrvxGs_GOVJcz6zam4";
 $response = htmlspecialchars($_POST['g-recaptcha-response']);
 $remoteip = $_SERVER['REMOTE_ADDR'];
 $request = "https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$response&remoteip=$remoteip";
@@ -21,6 +21,8 @@ if ($decode['success']) {
 
             $pagetitle = "NEW!!! Message du site \"$sitename\"";
             mail($recepient, $pagetitle, $message, "Content-type: text/plain; charset=\"utf-8\"\n From: $recepient");
+            header("Location: https://santiagodevweb.com/");
+            exit()
         }
     } else {
         http_response_code(405);
